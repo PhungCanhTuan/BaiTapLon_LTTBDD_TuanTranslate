@@ -21,6 +21,7 @@ export const DongTuBatQuyTac = ({ navigation }) => {
         fetch("https://66cfd198181d059277dc60b8.mockapi.io/apiTuDien/tuDienBatQuyTac")
             .then(response => response.json())
             .then(json => {
+                console.log("Fetched Data:", json); 
                 setData(json);
                 setFilteredData1(json);
             });
@@ -45,6 +46,7 @@ export const DongTuBatQuyTac = ({ navigation }) => {
             </TouchableOpacity>
         </TouchableOpacity>
     );
+    
 
     const searchFilterFunction = (text) => {
         if (text) {  
@@ -53,6 +55,7 @@ export const DongTuBatQuyTac = ({ navigation }) => {
                 const textData = text.toUpperCase();
                 return itemData.indexOf(textData) > -1;
             });
+            console.log("Filtered Data:", newData); // Kiểm tra dữ liệu sau khi lọc 
             setFilteredData1(newData);
         } else {
             setFilteredData1(data);
