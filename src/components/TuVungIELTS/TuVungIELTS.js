@@ -26,7 +26,9 @@ export const TuVungIELTS = ({navigation}) => {
 
     const getListData = ()=>
     {
-        fetch("https://6558f205e93ca47020a9ee7e.mockapi.io/baitaplon/dong-tu-bat-quy-tac")
+        // fetch("https://6558f205e93ca47020a9ee7e.mockapi.io/baitaplon/dong-tu-bat-quy-tac")
+        //fetch("https://66cfd198181d059277dc60b8.mockapi.io/apiTuDien/tuDienBatQuyTac")
+        fetch("https://66cfd198181d059277dc60b8.mockapi.io/apiTuDien/tuDien")
         .then(response => response.json())
         .then( json => {
             const filteredData = json.filter(item => item.loaiTu === "tuVungIELTS");
